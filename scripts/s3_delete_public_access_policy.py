@@ -9,7 +9,7 @@ def get_account_id(profile):
     return account_id
 
 
-def print_bucket_policy(profile):
+def delete_bucket_policy(profile):
     session = boto3.Session(profile_name=profile)
     client = session.client("s3control", region_name="us-east-1")
 
@@ -20,4 +20,4 @@ def print_bucket_policy(profile):
 if (
     __name__ == "__main__"
 ):  # takes profile_name as an argument. this could be done simpler, but I use profiles.
-    print_bucket_policy(sys.argv[1])
+    delete_bucket_policy(sys.argv[1])
